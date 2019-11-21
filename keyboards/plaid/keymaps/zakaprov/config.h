@@ -17,4 +17,5 @@
 #pragma once
 
 // place overrides here
-#define TAPPING_TERM 120
+#define TAPPING_TERM 140
+#define RETRO_TAPPING
