@@ -18,6 +18,73 @@ extern uint8_t is_master;
 #define _RAISE 2
 #define _ADJUST 3
 
+#define ALT_2 LALT_T(KC_2)
+#define ALT_3 LALT_T(KC_3)
+#define ALT_8 LALT_T(KC_8)
+#define ALT_D LALT_T(KC_D)
+#define ALT_E LALT_T(KC_E)
+#define ALT_K LALT_T(KC_K)
+#define ALT_LB LALT_T(KC_LBRC)
+#define ALT_S LALT_T(KC_S)
+#define CTRL_2 LCTL_T(KC_2)
+#define CTRL_4 LCTL_T(KC_4)
+#define CTRL_5 LCTL_T(KC_5)
+#define CTRL_9 LCTL_T(KC_9)
+#define CTRL_EQ LCTL_T(KC_EQL)
+#define CTRL_I LCTL_T(KC_I)
+#define CTRL_L LCTL_T(KC_L)
+#define CTRL_R LCTL_T(KC_R)
+#define CTRL_S LCTL_T(KC_S)
+#define GUI_0 LGUI_T(KC_0)
+#define GUI_1 LGUI_T(KC_1)
+#define GUI_4 LGUI_T(KC_4)
+#define GUI_7 LGUI_T(KC_7)
+#define GUI_RB LGUI_T(KC_RBRC)
+#define GUI_F LGUI_T(KC_F)
+#define GUI_J LGUI_T(KC_J)
+#define GUI_N LGUI_T(KC_N)
+#define GUI_TEA LGUI_T(KC_T)
+#define MAC_EM S(LALT(KC_MINS))
+#define MAC_EN LALT(KC_MINS)
+#define NAV_BK LT(_NAV, KC_BSPC)
+#define NAV_LK TG(_NAV)
+#define NUME_SPC LT(_NUM_E, KC_SPC)
+#define NUMLK_E TG(_NUM_E)
+#define NUMLK_N TG(_NUM_N)
+#define NUMN_SPC LT(_NUM_N, KC_SPC)
+#define SFT_0 LSFT_T(KC_0)
+#define SFT_1 LSFT_T(KC_1)
+#define SFT_6 LSFT_T(KC_6)
+#define SFT_7 LSFT_T(KC_7)
+#define SFT_A LSFT_T(KC_A)
+#define SFT_O LSFT_T(KC_O)
+#define SFT_OS OSM(MOD_LSFT)
+#define SFT_QOT LSFT_T(KC_QUOT)
+#define SYM_OS OSL(_SYM)
+#define SYS_Z LT(_SYS, KC_Z)
+#define VOL_DN S(LALT(KC__VOLDOWN))
+#define VOL_UP S(LALT(KC__VOLUP))
+
+#define ALT_F LALT_T(KC_F)
+#define ALT_6 LALT_T(KC_6)
+#define CTRL_A LCTL_T(KC_A)
+#define CTRL_0 LCTL_T(KC_0)
+#define GUI_G LGUI_T(KC_G)
+#define RALT_D RALT_T(KC_D)
+#define RALT_5 RALT_T(KC_5)
+#define SFT_S LSFT_T(KC_S)
+#define SFT_4 LSFT_T(KC_4)
+
+#define ALT_J LALT_T(KC_J)
+#define ALT_MIN LALT_T(KC_MINS)
+#define CTRL_SCLN LCTRL_T(KC_SCLN)
+#define CTRL_RBRC LCTRL_T(KC_RBRC)
+#define GUI_H LGUI_T(KC_H)
+#define RALT_K RALT_T(KC_K)
+#define RALT_EQL RALT_T(KC_EQL)
+#define SFT_L LSFT_T(KC_L)
+#define SFT_LBRC LSFT_T(KC_LBRC)
+
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
   LOWER,
@@ -36,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_TAB,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_BSPC,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,\
+      KC_BSPC,    CTRL_A,    SFT_S,    RALT_D,    ALT_F,    GUI_G,                  GUI_H,    ALT_J,    RALT_K,    SFT_L, CTRL_SCLN, KC_QUOT,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -49,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_GRV,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_BSPC, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_MINS, KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS,\
+      KC_BSPC, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, ALT_MIN, RALT_EQL, SFT_LBRC, CTRL_RBRC, KC_BSLS,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_RSFT,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -61,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC, XXXXXXX, KC_7,   KC_8,   KC_9,   XXXXXXX,                         KC_HOME, KC_PGDN, KC_PGUP, KC_END, XXXXXXX, KC_GRV,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_BSPC, KC_0,    KC_4,   KC_5,   KC_6,   XXXXXXX,                         KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, XXXXXXX, KC_BSLS,\
+      KC_BSPC, CTRL_0,    SFT_4,   RALT_5,   ALT_6,   GUI_G,                         GUI_H, KC_DOWN, KC_UP, KC_RIGHT, XXXXXXX, KC_BSLS,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, KC_1,   KC_2,   KC_3,   XXXXXXX,                         XXXXXXX, XXXXXXX, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
