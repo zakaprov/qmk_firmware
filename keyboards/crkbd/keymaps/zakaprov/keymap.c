@@ -18,10 +18,12 @@ extern uint8_t is_master;
 #define _RAISE 2
 #define _ADJUST 3
 
+#define LWR_OS OSL(_LOWER)
 #define LWR_SPC LT(_LOWER, KC_SPC)
-#define RSE_ENT LT(_RAISE, KC_ENT)
-#define SFT_OS OSM(MOD_LSFT)
 #define RALT_OS OSM(MOD_RALT)
+#define RSE_ENT LT(_RAISE, KC_ENT)
+#define RSE_OS OSL(_RAISE)
+#define SFT_OS OSM(MOD_LSFT)
 
 #define ALT_F LALT_T(KC_F)
 #define ALT_6 LALT_T(KC_6)
@@ -63,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       SFT_OS,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, SFT_OS,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,   RALT_OS,  LWR_SPC,     RSE_ENT,  RALT_OS, XXXXXXX \
+                                          RALT_OS,   LWR_OS,  KC_SPC,     KC_ENT,  RSE_OS, RALT_OS \
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -76,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       SFT_OS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, SFT_OS,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,   RALT_OS,  LWR_SPC,     RSE_ENT,  RALT_OS, XXXXXXX \
+                                          RALT_OS,   LWR_OS,  KC_SPC,     KC_ENT,  RSE_OS, RALT_OS \
                                       //`--------------------------'  `--------------------------'
     ),
 
@@ -88,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       SFT_OS, XXXXXXX, KC_1,   KC_2,   KC_3,   XXXXXXX,                         XXXXXXX, XXXXXXX, KC_COMM, KC_DOT, KC_SLSH, SFT_OS,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,   RALT_OS,  LWR_SPC,     RSE_ENT,  RALT_OS, XXXXXXX \
+                                          RALT_OS,   LWR_OS,  KC_SPC,     KC_ENT,  RSE_OS, RALT_OS \
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -100,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,   RALT_OS,  LWR_SPC,     RSE_ENT,  RALT_OS, XXXXXXX \
+                                          RALT_OS,   LWR_OS,  KC_SPC,     KC_ENT,  RSE_OS, RALT_OS \
                                       //`--------------------------'  `--------------------------'
   )
 };
