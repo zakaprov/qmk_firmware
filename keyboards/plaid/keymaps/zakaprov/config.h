@@ -16,6 +16,8 @@
 
 #pragma once
 
-// place overrides here
-#define TAPPING_TERM 140
-#define RETRO_TAPPING
+#define IGNORE_MOD_TAP_INTERRUPT
+#define TAPPING_TERM 180
+
+#define ONESHOT_TIMEOUT 1000
+#define ONESHOT_TAP_TOGGLE 2

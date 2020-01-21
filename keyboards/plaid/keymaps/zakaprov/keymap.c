@@ -43,6 +43,31 @@ enum plaid_keycodes {
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 
+#define LWR_OS OSL(_LOWER)
+#define LWR_SPC LT(_LOWER, KC_SPC)
+#define RALT_OS OSM(MOD_RALT)
+#define RSE_ENT LT(_RAISE, KC_ENT)
+#define RSE_OS OSL(_RAISE)
+#define SFT_OS OSM(MOD_LSFT)
+
+#define ALT_F LALT_T(KC_F)
+#define ALT_6 LALT_T(KC_6)
+#define CTRL_A LCTL_T(KC_A)
+#define CTRL_0 LCTL_T(KC_0)
+#define GUI_D LGUI_T(KC_D)
+#define GUI_5 LGUI_T(KC_5)
+#define SFT_S LSFT_T(KC_S)
+#define SFT_4 LSFT_T(KC_4)
+
+#define ALT_J LALT_T(KC_J)
+#define ALT_MIN LALT_T(KC_MINS)
+#define CTRL_SCLN LCTL_T(KC_SCLN)
+#define CTRL_RBRC LCTL_T(KC_RBRC)
+#define GUI_K LGUI_T(KC_K)
+#define GUI_EQL LGUI_T(KC_EQL)
+#define SFT_L LSFT_T(KC_L)
+#define SFT_LBRC LSFT_T(KC_LBRC)
+
 // array of keys considered modifiers for led purposes
 const uint16_t modifiers[] = {
     KC_LCTL,
@@ -83,9 +108,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_QWERTY] = LAYOUT_plaid_grid(
     KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_TAB,
-    KC_BSPC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-    KC_LCTL, XXXXXXX, XXXXXXX, KC_LGUI, KC_LALT, LT(_LOWER, KC_SPC),   LT(_RAISE, KC_ENT),  KC_RALT,   KC_LEFT, KC_DOWN, KC_UP,
+    KC_BSPC,  CTRL_A,    SFT_S,    GUI_D,    ALT_F,    KC_G,    KC_H,    ALT_J,    GUI_K,    SFT_L,    CTRL_SCLN, KC_QUOT,
+    SFT_OS, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_OS,
+    XXXXXXX, XXXXXXX, XXXXXXX, RALT_OS, LWR_OS, KC_SPC,   KC_ENT,  RSE_OS,   RALT_OS, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
 /* Lower
@@ -101,9 +126,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_LOWER] = LAYOUT_plaid_grid(
     KC_ESC, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, KC_GRV,
-    KC_BSPC,  XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   KC_MINS,    KC_EQL,    KC_LBRC, KC_RBRC, KC_BSLS,
-    KC_LSFT, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,  KC_RSFT,
-    KC_LCTL, XXXXXXX, XXXXXXX, KC_LGUI, KC_LALT, LT(_LOWER, KC_SPC),   LT(_RAISE, KC_ENT),  KC_RALT,   KC_LEFT, KC_DOWN, KC_UP,
+    KC_BSPC,  XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   ALT_MIN,    GUI_EQL,    SFT_LBRC, CTRL_RBRC, KC_BSLS,
+    SFT_OS, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,  SFT_OS,
+    XXXXXXX, XXXXXXX, XXXXXXX, RALT_OS, LWR_OS, KC_SPC,   KC_ENT,  RSE_OS,   RALT_OS, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
 /* Raise
@@ -118,10 +143,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_plaid_grid(
-    KC_ESC,  XXXXXXX,    KC_7,    KC_8,    KC_9,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_GRV,
-    KC_BSPC,  KC_0,   KC_4,   KC_5,   KC_6,   XXXXXXX,   KC_LEFT,   KC_DOWN, KC_UP,  KC_RIGHT, XXXXXXX, KC_BSLS,
-    KC_LSFT, XXXXXXX,   KC_1,   KC_2,   KC_3,  XXXXXXX,  KC_HOME,   KC_PGDN,   KC_PGUP,   KC_END, XXXXXXX, KC_RSFT,
-    KC_LCTL, XXXXXXX, XXXXXXX, KC_LGUI, KC_LALT, LT(_LOWER, KC_SPC),   LT(_RAISE, KC_ENT),  KC_RALT,   KC_LEFT, KC_DOWN, KC_UP,
+    KC_ESC,  XXXXXXX,    KC_7,    KC_8,    KC_9,    XXXXXXX,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,    XXXXXXX,    KC_GRV,
+    KC_BSPC,  CTRL_0,   SFT_4,   GUI_5,   ALT_6,   XXXXXXX,   KC_LEFT,   KC_DOWN, KC_UP,  KC_RIGHT, XXXXXXX, KC_BSLS,
+    SFT_OS, XXXXXXX,   KC_1,   KC_2,   KC_3,  XXXXXXX,  XXXXXXX,   XXXXXXX,   KC_COMM,   KC_DOT, KC_SLSH, SFT_OS,
+    XXXXXXX, XXXXXXX, XXXXXXX, RALT_OS, LWR_OS, KC_SPC,   KC_ENT,  RSE_OS,   RALT_OS, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
 /* Adjust (Lower + Raise)
